@@ -1,6 +1,6 @@
 #include "Game.h"
 
-void Game::moveObject(coord movement, GameObject object)
+void Game::moveObject(glm::vec3 movement, GameObject* object)
 {
-	object.setCoord(movement);
+	object->setCoord(movement);
 }

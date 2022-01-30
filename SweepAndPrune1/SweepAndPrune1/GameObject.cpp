@@ -2,37 +2,29 @@
 
 GameObject::GameObject() 
 {
-	arestaList[0].x = 3.0;
-	arestaList[0].y = 3.0;
-	arestaList[0].z = 3.0;
-
-	arestaList[1].x = -3.0;
-	arestaList[1].y = -3.0;
-	arestaList[1].z = -3.0;
-
+	max = glm::vec3(3, 3, 3);
+	min = glm::vec3(-3,-3,-3);
+	arestaList[0] = min;
+	arestaList[1] = max;
 }
 
-void GameObject::setCoord(coord coordinates)
+void GameObject::setCoord(glm::vec3 coordinates)
 {
-	arestaList[0].x += coordinates.x;
-	arestaList[0].y += coordinates.y;
-	arestaList[0].z += coordinates.z;
-
-	arestaList[1].x += coordinates.x;
-	arestaList[1].y += coordinates.y;
-	arestaList[1].z += coordinates.z;
 
 	centralPoint = coordinates;
+	
+	arestaList[0] = centralPoint + min;
+	arestaList[1] = centralPoint + max;
 
 }
 
-void GameObject::setArestas(coord pSuperior, coord pInferior)
+void GameObject::setArestas(glm::vec3 pSuperior, glm::vec3 pInferior)
 {
 	arestaList[0] = pSuperior;
 	arestaList[1] = pInferior;
 }
 
-coord* GameObject::getArestas()
+glm::vec3* GameObject::getArestas()
 {
 	return arestaList;
 }
