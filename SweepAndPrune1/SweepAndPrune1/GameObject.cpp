@@ -6,6 +6,7 @@ GameObject::GameObject()
 	min = glm::vec3(-3,-3,-3);
 	arestaList[0] = min;
 	arestaList[1] = max;
+	centralPoint = glm::vec3(0, 0, 0);
 }
 
 void GameObject::setCoord(glm::vec3 coordinates)
@@ -13,7 +14,7 @@ void GameObject::setCoord(glm::vec3 coordinates)
 
 	centralPoint = coordinates;
 	
-	arestaList[0] = centralPoint + min;
+	arestaList[0] = centralPoint + min; //translação de vértice
 	arestaList[1] = centralPoint + max;
 
 }
