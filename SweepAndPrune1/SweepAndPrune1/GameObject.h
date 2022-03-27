@@ -4,9 +4,9 @@
 class GameObject
 {
 	private:
-		glm::vec3 arestaList[2];
+		glm::vec3 arestaList[2];//Pq a lista de aresta tem apenas duas?
 		glm::vec3 centralPoint;
-		glm::vec3 max, min;
+		glm::vec3 max, min;// máxmo e mínimo de que mesmo?
 	public:
 		GameObject();
 		void setCoord(glm::vec3 coordinates);
